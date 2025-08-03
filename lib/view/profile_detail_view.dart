@@ -8,6 +8,7 @@ import 'package:movie_case/components/appbar/botom_navigation.dart';
 import 'package:movie_case/components/appbar/custom_appbar.dart';
 import 'package:movie_case/components/profile_detay/movie_card.dart';
 import 'package:movie_case/components/profile_detay/profile_info_row.dart';
+import 'package:movie_case/l10n/app_localizations.dart';
 
 class ProfileDetailView extends StatefulWidget {
   const ProfileDetailView({super.key});
@@ -88,10 +89,10 @@ class _ProfileDetailViewState extends State<ProfileDetailView> {
                           photoUrl: displayPhotoUrl,
                         ),
                         const SizedBox(height: 24),
-                        const Align(
+                        Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            "Beğendiğim Filmler",
+                            AppLocalizations.of(context)!.movis_like,
                             style: TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
@@ -142,9 +143,9 @@ class _ProfileDetailViewState extends State<ProfileDetailView> {
                   ),
                 );
               } else {
-                return const Center(
+                return Center(
                   child: Text(
-                    "Favori filmler yüklenemedi.",
+                    AppLocalizations.of(context)!.movie_not_load,
                     style: TextStyle(color: Colors.white),
                   ),
                 );

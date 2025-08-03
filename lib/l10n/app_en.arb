@@ -1,0 +1,23 @@
+{
+  "@@locale": "en",
+  "hello": "Hello",
+  "forgot_pasword" : "Forgot My Password",
+  "login" : "Log In",
+  "have_account" : "Don't have an account?",
+  "sign_up" : "Sign Up!",
+  "mail" : "E-Mail",
+  "password" : "Password",
+  "not_found_movie" : "Movie not found",
+  "not_found_image" : "Image not found",
+  "more" : "More",
+  "home" : "Home",
+  "profile" : "Profile",
+  "movis_like" : "Movies I like",
+  "movie_not_load" : "Favorite movies could not be loaded.",
+  "add_photo" : "Add Photo",
+  "profil_detail" : "Profif Detail",
+  "unlimited_offers" : "Unlimited Offers",
+  "continous" : "Continue",
+  "upload_photo" : "Upload Your Photo"
+  
+}

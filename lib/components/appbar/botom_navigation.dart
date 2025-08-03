@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:movie_case/view/profile_detail_view.dart';
 
 class CustomBottomNavigation extends StatelessWidget {
@@ -34,14 +35,14 @@ class CustomBottomNavigation extends StatelessWidget {
           _buildNavItem(
             context,
             asset: "assets/icons/home_icon.svg",
-            label: 'Anasayfa',
+            label: AppLocalizations.of(context)!.home,
             index: 0,
             isSelected: currentIndex == 0,
           ),
           _buildNavItem(
             context,
             asset: "assets/icons/bottom_person_icon.svg",
-            label: 'Profil',
+            label: AppLocalizations.of(context)!.profile,
             index: 1,
             isSelected: currentIndex == 1,
           ),

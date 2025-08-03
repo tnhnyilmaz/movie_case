@@ -1,0 +1,23 @@
+{
+  "@@locale": "tr",
+  "hello": "Merhabalar",
+  "forgot_pasword" : "Şifremi Unuttum",
+  "login" : "Giriş Yap",
+  "have_account" : "Bir hesabın yok mu?",
+  "sign_up" : "Kayıt Ol!",
+  "mail" : "E-Posta",
+  "password" : "Şifre",
+  "not_found_movie" : "Film Bulunamadı",
+  "not_found_image" : "Resim Bulunamadı",
+  "more" : "Daha Fazlası",
+  "home" : "Anasayfa",
+  "profile" : "Profil",
+  "movis_like" : "Beğendiğim Filmler",
+  "movie_not_load" : "Favori filmler yüklenemedi.",
+  "add_photo" : "Fotoğraf Ekle",
+  "profil_detail" : "Profil Detayı",
+  "unlimited_offers" : "Sınırsız Teklif",
+  "upload_photo" : "Fotoğrafınızı Yükleyiniz",
+  "continous" : "Devam Et"
+
+}

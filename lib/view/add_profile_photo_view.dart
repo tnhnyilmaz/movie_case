@@ -9,6 +9,7 @@ import 'package:movie_case/bloc/profile_photo/profile_photo_bloc.dart';
 import 'package:movie_case/components/appbar/custom_appbar.dart';
 import 'package:movie_case/components/button/custom_elevated_button.dart';
 import 'package:movie_case/components/container/login_register_text.dart';
+import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:movie_case/repositories/profile_repository.dart';
 import 'package:movie_case/view/profile_detail_view.dart'; // Yönlendirme için
 
@@ -64,10 +65,10 @@ class AddProfilePhoto extends StatelessWidget {
             builder: (context, state) {
               return Column(
                 children: [
-                  const LoginRegisterText(
-                    title: "Profil Fotoğrafı Ekle",
+                  LoginRegisterText(
+                    title: AppLocalizations.of(context)!.upload_photo,
                     descr:
-                        "Galeriden bir fotoğraf seçerek yüklemeyi tamamlayın.",
+                        "Resources out incentivize relaxation floor loss cc.",
                   ),
                   const SizedBox(height: 48),
 
@@ -87,7 +88,7 @@ class AddProfilePhoto extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.1),
                         borderRadius: BorderRadius.circular(
-                          80,
+                          24,
                         ), // Tam daire için
                         border: Border.all(
                           color: Colors.white.withOpacity(0.2),
@@ -106,7 +107,7 @@ class AddProfilePhoto extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: CustomElevatedButton(
-                      text: "Yükle ve Devam Et",
+                      text: AppLocalizations.of(context)!.continous,
                       onPressed: () {
                         // Sadece fotoğraf seçilmişse yükleme işlemini başlat.
                         if (state is ProfilePhotoSelected) {

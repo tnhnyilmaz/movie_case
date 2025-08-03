@@ -7,6 +7,7 @@ import 'package:movie_case/components/TextFieldComp/custom_textfield.dart';
 import 'package:movie_case/components/button/custom_elevated_button.dart';
 import 'package:movie_case/components/container/login_register_bottom_text.dart';
 import 'package:movie_case/components/container/login_register_text.dart';
+import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:movie_case/view/explorer_view.dart';
 import 'package:movie_case/view/register_view.dart';
 
@@ -61,21 +62,21 @@ class _LoginViewState extends State<LoginView> {
                 children: [
                   SizedBox(height: 180),
                   LoginRegisterText(
-                    title: "Merhabalar",
+                    title: AppLocalizations.of(context)!.hello,
                     descr:
                         "Tempus varius a vitae interdum id tortor elementum tristique eleifend at.",
                   ),
                   SizedBox(height: 48),
                   CustomTextfield(
                     preIconStr: "assets/icons/mail_icon.svg",
-                    hintStr: 'E-Posta',
+                    hintStr: AppLocalizations.of(context)!.mail,
                     obscureBool: false,
                     textEditingController: _emailController,
                   ),
                   SizedBox(height: 12),
                   CustomTextfield(
                     preIconStr: "assets/icons/password_icon.svg",
-                    hintStr: "Şifre",
+                    hintStr: AppLocalizations.of(context)!.password,
                     obscureBool: true,
                     sufIconStr: "assets/icons/password_hide_icon.svg",
                     textEditingController: _passwordController,
@@ -86,7 +87,7 @@ class _LoginViewState extends State<LoginView> {
                     child: TextButton(
                       onPressed: () {},
                       child: Text(
-                        "Şifremi Unuttum",
+                        AppLocalizations.of(context)!.forgot_pasword,
                         style: TextStyle(
                           fontSize: 12,
                           fontFamily: 'Euclid Circular A',
@@ -98,7 +99,7 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                   CustomElevatedButton(
-                    text: 'Giriş Yap',
+                    text: AppLocalizations.of(context)!.login,
                     onPressed: () {
                       context.read<AuthBloc>().add(
                         LoginRequested(
@@ -127,8 +128,8 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   SizedBox(height: 48),
                   LoginRegisterBottomText(
-                    lightText: "Bir hesabın yok mu?",
-                    underText: "Kayıt Ol!",
+                    lightText: AppLocalizations.of(context)!.have_account,
+                    underText: AppLocalizations.of(context)!.sign_up,
                     onPresed: () {
                       Navigator.push(
                         context,

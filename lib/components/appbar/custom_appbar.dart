@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:movie_case/l10n/app_localizations.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onPres;
@@ -15,7 +16,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: Colors.black,
         elevation: 0,
         leading: GestureDetector(
-          onTap:onPres,
+          onTap: onPres,
           child: Container(
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.1),
@@ -34,7 +35,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
 
         actions: [
           Text(
-            "Profil Detayı",
+            AppLocalizations.of(context)!.profil_detail,
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w500,
@@ -95,7 +96,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                 SvgPicture.asset("assets/icons/gem_icon.svg"),
                 SizedBox(width: 2),
                 Text(
-                  "Sınırlı Teklif",
+                  AppLocalizations.of(context)!.unlimited_offers,
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w500,

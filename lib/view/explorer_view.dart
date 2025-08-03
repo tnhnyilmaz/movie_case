@@ -6,6 +6,8 @@ import 'package:movie_case/bloc/movie/movie_event.dart';
 import 'package:movie_case/bloc/movie/movie_state.dart';
 import 'package:movie_case/components/appbar/botom_navigation.dart';
 import 'package:movie_case/components/explorer/alert_dialog.dart';
+import 'package:movie_case/components/explorer/language_button.dart';
+import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:number_pagination/number_pagination.dart';
 
 class ExplorerView extends StatefulWidget {
@@ -41,7 +43,9 @@ class _ExplorerViewState extends State<ExplorerView> {
                   width: double.infinity,
                   height: double.infinity,
                   decoration: const BoxDecoration(color: Colors.black),
-                  child: const Center(child: Text("Film Bulanamadı")),
+                  child: Center(
+                    child: Text(AppLocalizations.of(context)!.not_found_movie),
+                  ),
                 ),
               );
             }
@@ -68,8 +72,11 @@ class _ExplorerViewState extends State<ExplorerView> {
                           fit: BoxFit.cover,
                           width: double.infinity,
                           height: double.infinity,
-                          errorBuilder: (context, error, stackTrace) =>
-                              const Center(child: Text('Resim yüklenemedi')),
+                          errorBuilder: (context, error, stackTrace) => Center(
+                            child: Text(
+                              AppLocalizations.of(context)!.not_found_image,
+                            ),
+                          ),
                         ),
                         Positioned(
                           bottom: 0,
@@ -165,8 +172,8 @@ class _ExplorerViewState extends State<ExplorerView> {
                                         color: Colors.white.withOpacity(0.75),
                                       ),
                                     ),
-                                    const Text(
-                                      "Daha Fazlası",
+                                    Text(
+                                      AppLocalizations.of(context)!.more,
                                       style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.bold,
@@ -213,6 +220,8 @@ class _ExplorerViewState extends State<ExplorerView> {
                     ),
                   ),
                 ),
+                LanguageButton(),
+
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: CustomBottomNavigation(

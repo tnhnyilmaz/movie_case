@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:movie_case/view/add_profile_photo_view.dart';
 
 class ProfileInfoRow extends StatelessWidget {
@@ -81,7 +82,7 @@ class ProfileInfoRow extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Fotoğraf Ekle",
+                AppLocalizations.of(context)!.add_photo,
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,

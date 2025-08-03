@@ -5,6 +5,8 @@ import 'package:movie_case/bloc/auth/auth_bloc.dart';
 import 'package:movie_case/bloc/movie/movie_bloc.dart';
 import 'package:movie_case/repositories/auth_repository.dart';
 import 'package:movie_case/repositories/movie_repository.dart';
+import 'package:movie_case/view/explorer_view.dart';
+import 'package:movie_case/view/profile_detail_view.dart';
 import 'package:movie_case/view/root_page.dart';
 
 void main() {
@@ -60,7 +62,12 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const RootPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const RootPage(),
+        '/explorer': (context) => const ExplorerView(),
+        '/profile': (context) => const ProfileDetailView(),
+      },
     );
   }
 }

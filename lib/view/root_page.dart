@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_case/bloc/auth/auth_bloc.dart';
+import 'package:movie_case/view/explorer_view.dart';
 import 'package:movie_case/view/login_view.dart';
-import 'package:movie_case/view/main_view.dart';
 
 class RootPage extends StatelessWidget {
   const RootPage({super.key});
@@ -12,7 +12,7 @@ class RootPage extends StatelessWidget {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         if (state is AuthAuthenticated) {
-          return MainScreen();
+          return  ExplorerView();
         }
         return const LoginView(); // Artık güvenle kullanabilirsin
       },

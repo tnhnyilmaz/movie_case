@@ -30,10 +30,8 @@ class ProfilePhotoFailure extends ProfilePhotoState {
 }
 
 class ProfilePhotoUploaded extends ProfilePhotoState {
-  final String message;
-
-  const ProfilePhotoUploaded({required this.message});
-
+  final String photoUrl;
+  const ProfilePhotoUploaded({required this.photoUrl});
   @override
-  List<Object?> get props => [message];
+  List<Object?> get props => [photoUrl];
 }

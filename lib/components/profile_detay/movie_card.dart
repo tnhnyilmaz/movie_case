@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 class MovieCard extends StatelessWidget {
   final String title;
   final String descr;
+  final String poster;
 
-  const MovieCard({super.key, required this.title, required this.descr});
+  const MovieCard({
+    super.key,
+    required this.title,
+    required this.descr,
+    required this.poster,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +30,19 @@ class MovieCard extends StatelessWidget {
               width: double.infinity,
               height: 400,
               decoration: BoxDecoration(
-                color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.network(
+                  poster.isNotEmpty
+                      ? poster
+                      : "https://i.hizliresim.com/bj21ezq.jpg",
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return const Icon(Icons.broken_image, color: Colors.white);
+                  },
+                ),
               ),
             ),
           ),

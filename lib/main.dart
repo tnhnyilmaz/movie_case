@@ -9,6 +9,7 @@ import 'package:movie_case/bloc/movie/movie_bloc.dart';
 import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:movie_case/repositories/auth_repository.dart';
 import 'package:movie_case/repositories/movie_repository.dart';
+import 'package:movie_case/const/theme/theme.dart';
 import 'package:movie_case/view/explorer_view.dart';
 import 'package:movie_case/view/profile_detail_view.dart';
 import 'package:movie_case/view/root_page.dart';
@@ -55,24 +56,9 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            textTheme: const TextTheme(
-              headlineLarge: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Euclid Circular A',
-              ),
-              titleMedium: TextStyle(
-                color: Colors
-                    .white, // Colors.white.withOpacity(0.75) yerine bu daha iyi görünebilir.
-                fontSize: 13,
-                fontFamily: 'Euclid Circular A',
-              ),
-            ),
-          ),
           locale: state.locale,
+          theme: customTheme,
+
           localizationsDelegates: const [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,

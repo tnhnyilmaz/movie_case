@@ -18,10 +18,10 @@ class LoginRegisterBottomText extends StatelessWidget {
       children: [
         Text(
           lightText,
-          style: TextStyle(
-            fontSize: 12,
-            fontFamily: 'Euclid Circular A',
-            color: Colors.white.withOpacity(0.5),
+          style: Theme.of(context).textTheme.labelMedium?.copyWith(
+            color: Theme.of(
+              context,
+            ).textTheme.labelMedium?.color?.withOpacity(0.2),
           ),
         ),
         SizedBox(width: 6),
@@ -29,12 +29,10 @@ class LoginRegisterBottomText extends StatelessWidget {
           onPressed: onPresed,
           child: Text(
             underText,
-            style: TextStyle(
-              fontSize: 12,
-              fontFamily: 'Euclid Circular A',
-              color: Colors.white,
+            style: Theme.of(context).textTheme.labelMedium?.copyWith(
               decoration: TextDecoration.underline,
               decorationColor: Colors.white,
+              decorationThickness: 1.5,
             ),
           ),
         ),

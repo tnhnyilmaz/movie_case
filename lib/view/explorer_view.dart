@@ -7,6 +7,7 @@ import 'package:movie_case/bloc/movie/movie_state.dart';
 import 'package:movie_case/components/appbar/botom_navigation.dart';
 import 'package:movie_case/components/explorer/alert_dialog.dart';
 import 'package:movie_case/components/explorer/language_button.dart';
+import 'package:movie_case/const/theme/app_assets.dart';
 import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:number_pagination/number_pagination.dart';
 
@@ -21,7 +22,6 @@ class _ExplorerViewState extends State<ExplorerView> {
   @override
   void initState() {
     super.initState();
-    // Eğer state'de zaten film varsa tekrar yükleme yapma
     if (context.read<MovieBloc>().state is! MovieLoaded) {
       context.read<MovieBloc>().add(const FetchMovies(page: 1));
     }
@@ -124,8 +124,8 @@ class _ExplorerViewState extends State<ExplorerView> {
                                   padding: const EdgeInsets.all(14.0),
                                   child: SvgPicture.asset(
                                     movie.isFav
-                                        ? "assets/icons/hearts_icon.svg"
-                                        : "assets/icons/hearts_icon_outline.svg",
+                                        ? AppIconAssets.heartsIcon
+                                        : AppIconAssets.heartsIconOutline,
                                   ),
                                 ),
                               ),
@@ -155,31 +155,33 @@ class _ExplorerViewState extends State<ExplorerView> {
                                   children: [
                                     Text(
                                       movie.title,
-                                      style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'Euclid Circular A',
-                                        color: Colors.white,
-                                      ),
+                                      style: Theme.of(
+                                        context,
+                                      ).textTheme.headlineLarge,
                                     ),
                                     Text(
                                       movie.plot,
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontFamily: 'Euclid Circular A',
-                                        color: Colors.white.withOpacity(0.75),
-                                      ),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelMedium
+                                          ?.copyWith(
+                                            color: Theme.of(context)
+                                                .textTheme
+                                                .labelMedium
+                                                ?.color
+                                                ?.withOpacity(0.5),
+                                          ),
                                     ),
                                     Text(
                                       AppLocalizations.of(context)!.more,
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'Euclid Circular A',
-                                        color: Colors.white,
-                                      ),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelMedium
+                                          ?.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                     ),
                                   ],
                                 ),

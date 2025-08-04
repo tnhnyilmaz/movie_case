@@ -64,4 +64,43 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get upload_photo => 'Fotoğrafınızı Yükleyiniz';
+
+  @override
+  String get want_add_fav => 'Bu filmi favorilere eklemek istiyor musunuz?';
+
+  @override
+  String get cancel => 'İptal';
+
+  @override
+  String get add => 'Ekle';
+
+  @override
+  String get welcome => 'Hoşgeldiniz';
+
+  @override
+  String get name_surname => 'Ad Soyad';
+
+  @override
+  String get password_again => 'Şifre Tekrar';
+
+  @override
+  String get kullnici_soz => 'Kullanıcı sözleşmesini';
+
+  @override
+  String get read_ok => 'okudum ve kabul ediyorum';
+
+  @override
+  String get read_continues => '. Bu Sözleşmeyi okuyarak devam ediniz lütfen.';
+
+  @override
+  String get sign_up_now => 'Şimdi Kaydol';
+
+  @override
+  String get exiting_account => 'Zaten bir hesabın var mı?';
+
+  @override
+  String get ok_photo => 'Fotoğraf başarıyla yüklendi!';
+
+  @override
+  String get select_photo => 'Lütfen önce bir fotoğraf seçin.';
 }

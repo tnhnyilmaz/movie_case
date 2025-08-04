@@ -2,11 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_case/bloc/auth/auth_bloc.dart';
-import 'package:movie_case/components/Login/socia_media_container.dart';
+import 'package:movie_case/components/Login/social_media_row.dart';
 import 'package:movie_case/components/TextFieldComp/custom_textfield.dart';
 import 'package:movie_case/components/button/custom_elevated_button.dart';
 import 'package:movie_case/components/container/login_register_bottom_text.dart';
 import 'package:movie_case/components/container/login_register_text.dart';
+import 'package:movie_case/const/theme/app_assets.dart';
 import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:movie_case/view/explorer_view.dart';
 import 'package:movie_case/view/register_view.dart';
@@ -68,17 +69,17 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   SizedBox(height: 48),
                   CustomTextfield(
-                    preIconStr: "assets/icons/mail_icon.svg",
+                    preIconStr: AppIconAssets.mailIcon,
                     hintStr: AppLocalizations.of(context)!.mail,
                     obscureBool: false,
                     textEditingController: _emailController,
                   ),
                   SizedBox(height: 12),
                   CustomTextfield(
-                    preIconStr: "assets/icons/password_icon.svg",
+                    preIconStr: AppIconAssets.passwordIcon,
                     hintStr: AppLocalizations.of(context)!.password,
                     obscureBool: true,
-                    sufIconStr: "assets/icons/password_hide_icon.svg",
+                    sufIconStr: AppIconAssets.passwordHideIcon,
                     textEditingController: _passwordController,
                   ),
                   SizedBox(height: 12),
@@ -88,13 +89,12 @@ class _LoginViewState extends State<LoginView> {
                       onPressed: () {},
                       child: Text(
                         AppLocalizations.of(context)!.forgot_pasword,
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: 'Euclid Circular A',
-                          color: Colors.white,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.white.withOpacity(1),
-                        ),
+                        style: Theme.of(context).textTheme.labelMedium
+                            ?.copyWith(
+                              decoration: TextDecoration.underline,
+                              decorationColor: Colors.white,
+                              decorationThickness: 1.5,
+                            ),
                       ),
                     ),
                   ),
@@ -110,22 +110,7 @@ class _LoginViewState extends State<LoginView> {
                     },
                   ),
                   SizedBox(height: 48),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SociaMediaContainer(
-                        logoStr: 'assets/icons/google_icon.svg',
-                      ),
-                      SizedBox(width: 16),
-                      SociaMediaContainer(
-                        logoStr: 'assets/icons/apple_icon.svg',
-                      ),
-                      SizedBox(width: 16),
-                      SociaMediaContainer(
-                        logoStr: 'assets/icons/facebook_icon.svg',
-                      ),
-                    ],
-                  ),
+                  SocialMediaRow(),
                   SizedBox(height: 48),
                   LoginRegisterBottomText(
                     lightText: AppLocalizations.of(context)!.have_account,

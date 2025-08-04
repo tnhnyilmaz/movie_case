@@ -25,9 +25,25 @@ class LanguageButton extends StatelessWidget {
             onSelected: (Locale newLocale) {
               context.read<LocaleBloc>().add(ChangeLocale(newLocale));
             },
-            itemBuilder: (context) => const [
-              PopupMenuItem(value: Locale('en'), child: Text('English')),
-              PopupMenuItem(value: Locale('tr'), child: Text('Türkçe')),
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: Locale('en'),
+                child: Text(
+                  'English',
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelMedium?.copyWith(color: Colors.black),
+                ),
+              ),
+              PopupMenuItem(
+                value: Locale('tr'),
+                child: Text(
+                  'Türkçe',
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelMedium?.copyWith(color: Colors.black),
+                ),
+              ),
             ],
             color: Colors.white,
             shape: RoundedRectangleBorder(

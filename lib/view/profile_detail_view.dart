@@ -47,6 +47,7 @@ class _ProfileDetailViewState extends State<ProfileDetailView> {
         onPres: () {
           Navigator.pushReplacementNamed(context, '/explorer');
         },
+        isOffer: true,
       ),
       backgroundColor: Colors.black,
       body: BlocConsumer<AuthBloc, AuthState>(
@@ -93,12 +94,8 @@ class _ProfileDetailViewState extends State<ProfileDetailView> {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             AppLocalizations.of(context)!.movis_like,
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Euclid Circular A',
-                              color: Colors.white,
-                            ),
+                            style: Theme.of(context).textTheme.titleMedium
+                                ?.copyWith(fontWeight: FontWeight.bold),
                           ),
                         ),
                         const SizedBox(height: 24),

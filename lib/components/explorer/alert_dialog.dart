@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_case/bloc/movie/movie_bloc.dart';
 import 'package:movie_case/bloc/movie/movie_event.dart';
 import 'package:movie_case/bloc/movie/movie_state.dart';
+import 'package:movie_case/l10n/app_localizations.dart';
 
 class CustomAlertDialog extends StatelessWidget {
   final String title;
@@ -18,11 +19,11 @@ class CustomAlertDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text(title),
-      content: const Text('Bu filmi favorilere eklemek istiyor musunuz?'),
+      content: Text(AppLocalizations.of(context)!.want_add_fav),
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(), // Cancel
-          child: const Text('İptal'),
+          child: Text(AppLocalizations.of(context)!.cancel),
         ),
         TextButton(
           onPressed: () {
@@ -39,7 +40,7 @@ class CustomAlertDialog extends StatelessWidget {
               Navigator.of(context).pop(); // Dialog'u kapat
             });
           },
-          child: const Text('Ekle'),
+          child: Text(AppLocalizations.of(context)!.add),
         ),
       ],
     );

@@ -18,6 +18,20 @@
   "profil_detail" : "Profil Detayı",
   "unlimited_offers" : "Sınırsız Teklif",
   "upload_photo" : "Fotoğrafınızı Yükleyiniz",
-  "continous" : "Devam Et"
+  "continous" : "Devam Et",
+  "want_add_fav" : "Bu filmi favorilere eklemek istiyor musunuz?",
+  "cancel" : "İptal",
+  "add" : "Ekle",
+  "welcome" : "Hoşgeldiniz",
+  "name_surname" : "Ad Soyad",
+  "password_again" : "Şifre Tekrar",
+  "kullnici_soz" : "Kullanıcı sözleşmesini",
+  "read_ok" :  "okudum ve kabul ediyorum",
+  "read_continues" : ". Bu Sözleşmeyi okuyarak devam ediniz lütfen.",
+  "sign_up_now" : "Şimdi Kaydol",
+  "exiting_account" : "Zaten bir hesabın var mı?",
+  "ok_photo" : "Fotoğraf başarıyla yüklendi!",
+  "select_photo" : "Lütfen önce bir fotoğraf seçin."
+
 
 }

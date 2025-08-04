@@ -64,4 +64,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get upload_photo => 'Upload Your Photo';
+
+  @override
+  String get want_add_fav => 'Do you want to add this movie to your favorites?';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get add => 'Add';
+
+  @override
+  String get welcome => 'welcome';
+
+  @override
+  String get name_surname => 'Name Surname';
+
+  @override
+  String get password_again => 'Repeat Password';
+
+  @override
+  String get kullnici_soz => 'User agreement';
+
+  @override
+  String get read_ok => 'I have read and accept';
+
+  @override
+  String get read_continues => '. Please continue by reading this Agreement..';
+
+  @override
+  String get sign_up_now => 'Sign Up Now';
+
+  @override
+  String get exiting_account => 'Do you already have an account?';
+
+  @override
+  String get ok_photo => 'Photo uploaded successfully!';
+
+  @override
+  String get select_photo => 'Please select a photo first.';
 }

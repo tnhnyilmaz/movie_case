@@ -208,6 +208,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Upload Your Photo'**
   String get upload_photo;
+
+  /// No description provided for @want_add_fav.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to add this movie to your favorites?'**
+  String get want_add_fav;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get add;
+
+  /// No description provided for @welcome.
+  ///
+  /// In en, this message translates to:
+  /// **'welcome'**
+  String get welcome;
+
+  /// No description provided for @name_surname.
+  ///
+  /// In en, this message translates to:
+  /// **'Name Surname'**
+  String get name_surname;
+
+  /// No description provided for @password_again.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat Password'**
+  String get password_again;
+
+  /// No description provided for @kullnici_soz.
+  ///
+  /// In en, this message translates to:
+  /// **'User agreement'**
+  String get kullnici_soz;
+
+  /// No description provided for @read_ok.
+  ///
+  /// In en, this message translates to:
+  /// **'I have read and accept'**
+  String get read_ok;
+
+  /// No description provided for @read_continues.
+  ///
+  /// In en, this message translates to:
+  /// **'. Please continue by reading this Agreement..'**
+  String get read_continues;
+
+  /// No description provided for @sign_up_now.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up Now'**
+  String get sign_up_now;
+
+  /// No description provided for @exiting_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you already have an account?'**
+  String get exiting_account;
+
+  /// No description provided for @ok_photo.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo uploaded successfully!'**
+  String get ok_photo;
+
+  /// No description provided for @select_photo.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a photo first.'**
+  String get select_photo;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

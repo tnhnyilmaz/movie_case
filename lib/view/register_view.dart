@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_case/bloc/auth/auth_bloc.dart';
-import 'package:movie_case/components/Login/socia_media_container.dart';
+import 'package:movie_case/components/Login/social_media_row.dart';
 import 'package:movie_case/components/TextFieldComp/custom_textfield.dart';
 import 'package:movie_case/components/button/custom_elevated_button.dart';
 import 'package:movie_case/components/container/login_register_bottom_text.dart';
 import 'package:movie_case/components/container/login_register_text.dart';
+import 'package:movie_case/const/theme/app_assets.dart';
+import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:movie_case/view/login_view.dart';
 
 class RegisterView extends StatefulWidget {
@@ -63,58 +65,58 @@ class _RegisterViewState extends State<RegisterView> {
                   SizedBox(height: 130),
 
                   LoginRegisterText(
-                    title: "Hoşgeldiniz",
+                    title: AppLocalizations.of(context)!.welcome,
                     descr:
                         "empus varius a vitae interdum id tortor elementum tristique eleifend at.",
                   ),
                   SizedBox(height: 28),
                   CustomTextfield(
-                    hintStr: "Ad Soyad",
+                    hintStr: AppLocalizations.of(context)!.name_surname,
                     obscureBool: false,
-                    preIconStr: "assets/icons/person_icon.svg",
+                    preIconStr: AppIconAssets.personIcon,
                     textEditingController: _nameController,
                   ),
                   SizedBox(height: 12),
                   CustomTextfield(
-                    preIconStr: "assets/icons/mail_icon.svg",
-                    hintStr: 'E-Posta',
+                    preIconStr: AppIconAssets.mailIcon,
+                    hintStr: AppLocalizations.of(context)!.mail,
                     obscureBool: false,
                     textEditingController: _emailController,
                   ),
                   SizedBox(height: 12),
                   CustomTextfield(
-                    preIconStr: "assets/icons/password_icon.svg",
-                    hintStr: "Şifre",
+                    preIconStr: AppIconAssets.passwordIcon,
+                    hintStr: AppLocalizations.of(context)!.password,
                     obscureBool: true,
-                    sufIconStr: "assets/icons/password_hide_icon.svg",
+                    sufIconStr: AppIconAssets.passwordHideIcon,
                     textEditingController: _passwordController,
                   ),
                   SizedBox(height: 12),
                   CustomTextfield(
-                    preIconStr: "assets/icons/password_icon.svg",
-                    hintStr: "Şifre Tekrar",
+                    preIconStr: AppIconAssets.passwordIcon,
+                    hintStr: AppLocalizations.of(context)!.password_again,
                     obscureBool: true,
                     textEditingController: _repeatPasswordController,
                   ),
                   SizedBox(height: 12),
                   Text.rich(
                     TextSpan(
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'Euclid Circular A',
+                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
                         color: Colors.white.withOpacity(0.5),
                       ),
                       children: [
-                        TextSpan(text: "Kullanıcı sözleşmesini "),
                         TextSpan(
-                          text: "okudum ve kabul ediyorum",
+                          text: AppLocalizations.of(context)!.kullnici_soz,
+                        ),
+                        TextSpan(
+                          text: AppLocalizations.of(context)!.read_ok,
                           style: TextStyle(
                             decoration: TextDecoration.underline,
                             decorationColor: Colors.white,
                           ),
                         ),
                         TextSpan(
-                          text: ". Bu Sözleşmeyi okuyarak devam ediniz lütfen.",
+                          text: AppLocalizations.of(context)!.read_continues,
                         ),
                       ],
                     ),
@@ -122,7 +124,7 @@ class _RegisterViewState extends State<RegisterView> {
                   SizedBox(height: 36),
 
                   CustomElevatedButton(
-                    text: 'Şimdi Kaydol',
+                    text: AppLocalizations.of(context)!.sign_up_now,
                     onPressed: () {
                       context.read<AuthBloc>().add(
                         RegisterRequested(
@@ -135,27 +137,12 @@ class _RegisterViewState extends State<RegisterView> {
                   ),
                   SizedBox(height: 48),
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SociaMediaContainer(
-                        logoStr: 'assets/icons/google_icon.svg',
-                      ),
-                      SizedBox(width: 16),
-                      SociaMediaContainer(
-                        logoStr: 'assets/icons/apple_icon.svg',
-                      ),
-                      SizedBox(width: 16),
-                      SociaMediaContainer(
-                        logoStr: 'assets/icons/facebook_icon.svg',
-                      ),
-                    ],
-                  ),
+                  SocialMediaRow(),
                   SizedBox(height: 12),
 
                   LoginRegisterBottomText(
-                    lightText: "Zaten bir hesabın var mı?",
-                    underText: "Giriş Yap!",
+                    lightText: AppLocalizations.of(context)!.exiting_account,
+                    underText: AppLocalizations.of(context)!.login,
                     onPresed: () {
                       Navigator.push(
                         context,

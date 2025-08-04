@@ -9,6 +9,7 @@ import 'package:movie_case/bloc/profile_photo/profile_photo_bloc.dart';
 import 'package:movie_case/components/appbar/custom_appbar.dart';
 import 'package:movie_case/components/button/custom_elevated_button.dart';
 import 'package:movie_case/components/container/login_register_text.dart';
+import 'package:movie_case/const/theme/app_assets.dart';
 import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:movie_case/repositories/profile_repository.dart';
 import 'package:movie_case/view/profile_detail_view.dart'; // Yönlendirme için
@@ -33,6 +34,7 @@ class AddProfilePhoto extends StatelessWidget {
             // Geri dönüldüğünde profil sayfasına git
             Navigator.pushReplacementNamed(context, '/profile');
           },
+          isOffer: false,
         ),
         body: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -42,8 +44,8 @@ class AddProfilePhoto extends StatelessWidget {
             listener: (context, state) {
               if (state is ProfilePhotoUploaded) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text("Fotoğraf başarıyla yüklendi!"),
+                  SnackBar(
+                    content: Text(AppLocalizations.of(context)!.ok_photo),
                     backgroundColor: Colors.green,
                   ),
                 );
@@ -118,8 +120,10 @@ class AddProfilePhoto extends StatelessWidget {
                         } else {
                           // Kullanıcı fotoğraf seçmeden butona basarsa uyar.
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text("Lütfen önce bir fotoğraf seçin."),
+                            SnackBar(
+                              content: Text(
+                                AppLocalizations.of(context)!.select_photo,
+                              ),
                             ),
                           );
                         }
@@ -155,7 +159,7 @@ class AddProfilePhoto extends StatelessWidget {
       // Başlangıç veya hata durumu: Artı ikonu göster.
       return Center(
         child: SvgPicture.asset(
-          "assets/icons/plus_icon.svg", // SVG dosyanızın yolu
+          AppIconAssets.plusIcon, // SVG dosyanızın yolu
           width: 40,
           height: 40,
           colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),

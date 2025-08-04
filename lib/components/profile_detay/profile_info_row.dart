@@ -42,35 +42,20 @@ class ProfileInfoRow extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  userName,
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontFamily: 'Euclid Circular A',
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
+                Text(userName, style: Theme.of(context).textTheme.titleSmall),
                 SizedBox(height: 4),
                 Text(
                   userId,
-                  style: TextStyle(
-                    fontSize: 8,
-                    fontFamily: 'Euclid Circular A',
-                    color: Colors.white.withOpacity(0.5),
-                  ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelLarge?.copyWith(fontSize: 8),
                 ),
               ],
             ),
           ],
         ),
         ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xffe50914),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadiusGeometry.circular(8),
-            ),
-          ),
+          style: Theme.of(context).elevatedButtonTheme.style,
           onPressed: () {
             Navigator.pushReplacement(
               context,
@@ -83,11 +68,9 @@ class ProfileInfoRow extends StatelessWidget {
             children: [
               Text(
                 AppLocalizations.of(context)!.add_photo,
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),

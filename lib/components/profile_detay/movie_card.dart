@@ -51,21 +51,16 @@ class MovieCard extends StatelessWidget {
             flex: 1,
             child: Text(
               title,
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: 'Euclid Circular A',
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.labelMedium?.copyWith(fontWeight: FontWeight.bold),
             ),
           ),
           Expanded(
             flex: 1,
             child: Text(
               descr,
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: 'Euclid Circular A',
+              style: Theme.of(context).textTheme.labelMedium?.copyWith(
                 color: Colors.white.withOpacity(0.75),
               ),
             ),

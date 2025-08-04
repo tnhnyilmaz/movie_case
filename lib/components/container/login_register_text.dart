@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 class LoginRegisterText extends StatelessWidget {
   final String title;
   final String descr;
-  const LoginRegisterText({super.key, required this.title, required this.descr});
+  const LoginRegisterText({
+    super.key,
+    required this.title,
+    required this.descr,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,22 +20,12 @@ class LoginRegisterText extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.white,
-              fontFamily: 'Euclid Circular A',
-              fontWeight: FontWeight.w700,
-              fontSize: 18,
-            ),
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
           Text(
             descr,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.white,
-              fontFamily: 'Euclid Circular A',
-              fontSize: 13,
-              fontWeight: FontWeight.w500,
-            ),
+            style: Theme.of(context).textTheme.titleMedium,
           ),
         ],
       ),

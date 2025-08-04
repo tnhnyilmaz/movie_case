@@ -13,7 +13,8 @@ class CustomTextfield extends StatefulWidget {
     required this.hintStr,
     required this.obscureBool,
     required this.preIconStr,
-    this.sufIconStr, required this.textEditingController,
+    this.sufIconStr,
+    required this.textEditingController,
   });
 
   @override
@@ -54,11 +55,7 @@ class _CustomTextfieldState extends State<CustomTextfield> {
     return TextField(
       focusNode: _focusNode,
       obscureText: _obscureText,
-      style: TextStyle(
-        fontFamily: 'Euclid Circular A',
-        fontSize: 12,
-        color: Colors.white,
-      ),
+      style: Theme.of(context).textTheme.labelMedium,
       controller: widget.textEditingController,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 0),
@@ -84,10 +81,10 @@ class _CustomTextfieldState extends State<CustomTextfield> {
               )
             : null,
         hintText: widget.hintStr,
-        hintStyle: TextStyle(
-          fontFamily: 'Euclid Circular A',
-          fontSize: 12,
-          color: Colors.white.withOpacity(0.3),
+        hintStyle: Theme.of(context).textTheme.labelMedium?.copyWith(
+          color: Theme.of(
+            context,
+          ).textTheme.labelMedium?.color?.withOpacity(0.2 ),
         ),
         filled: true,
         fillColor: Colors.white.withOpacity(0.08),

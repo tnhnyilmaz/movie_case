@@ -18,6 +18,19 @@
   "profil_detail" : "Profif Detail",
   "unlimited_offers" : "Unlimited Offers",
   "continous" : "Continue",
-  "upload_photo" : "Upload Your Photo"
+  "upload_photo" : "Upload Your Photo",
+  "want_add_fav" : "Do you want to add this movie to your favorites?",
+  "cancel" : "Cancel",
+  "add" : "Add",
+   "welcome" : "welcome",
+  "name_surname" : "Name Surname",
+  "password_again" : "Repeat Password",
+  "kullnici_soz" : "User agreement",
+  "read_ok" :  "I have read and accept",
+  "read_continues" : ". Please continue by reading this Agreement..",
+  "sign_up_now" : "Sign Up Now",
+  "exiting_account" : "Do you already have an account?",
+  "ok_photo" : "Photo uploaded successfully!",
+  "select_photo" : "Please select a photo first."
   
 }

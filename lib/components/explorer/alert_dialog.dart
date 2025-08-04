@@ -18,12 +18,19 @@ class CustomAlertDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(title),
-      content: Text(AppLocalizations.of(context)!.want_add_fav),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      title: Text(title, style: Theme.of(context).textTheme.headlineLarge),
+      content: Text(
+        AppLocalizations.of(context)!.want_add_fav,
+        style: Theme.of(context).textTheme.bodyMedium,
+      ),
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(), // Cancel
-          child: Text(AppLocalizations.of(context)!.cancel),
+          child: Text(
+            AppLocalizations.of(context)!.cancel,
+            style: Theme.of(context).textTheme.headlineLarge,
+          ),
         ),
         TextButton(
           onPressed: () {
@@ -35,12 +42,15 @@ class CustomAlertDialog extends StatelessWidget {
               final currentState = bloc.state;
               if (currentState is MovieLoaded) {
                 bloc.add(FetchMovies(page: currentState.currentPage));
-              }
+              } 
 
               Navigator.of(context).pop(); // Dialog'u kapat
             });
           },
-          child: Text(AppLocalizations.of(context)!.add),
+          child: Text(
+            AppLocalizations.of(context)!.add,
+            style: Theme.of(context).textTheme.headlineLarge,
+          ),
         ),
       ],
     );

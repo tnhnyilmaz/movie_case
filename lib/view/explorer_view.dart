@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_case/bloc/movie/movie_bloc.dart';
 import 'package:movie_case/bloc/movie/movie_event.dart';
 import 'package:movie_case/bloc/movie/movie_state.dart';
 import 'package:movie_case/components/appbar/botom_navigation.dart';
-import 'package:movie_case/components/explorer/alert_dialog.dart';
+import 'package:movie_case/components/explorer/bottom_gradient.dart';
+import 'package:movie_case/components/explorer/fav_container.dart';
 import 'package:movie_case/components/explorer/language_button.dart';
-import 'package:movie_case/const/theme/app_assets.dart';
+import 'package:movie_case/components/explorer/movie_text_detail.dart';
 import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:number_pagination/number_pagination.dart';
 
@@ -78,116 +78,17 @@ class _ExplorerViewState extends State<ExplorerView> {
                             ),
                           ),
                         ),
-                        Positioned(
-                          bottom: 0,
-                          child: SizedBox(
-                            width: MediaQuery.of(context).size.width,
-                            height: MediaQuery.of(context).size.height / 2,
-                            child: Container(
-                              decoration: const BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [Colors.black, Colors.transparent],
-                                  begin: Alignment.bottomCenter,
-                                  end: Alignment.topCenter,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+                        Positioned(bottom: 0, child: BottomGradient()),
                         Positioned(
                           bottom: 260,
                           right: 17,
-                          child: GestureDetector(
-                            onTap: () {
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return CustomAlertDialog(
-                                    title: movie.title,
-                                    movieId: movie.id,
-                                  );
-                                },
-                              );
-                            },
-                            child: SizedBox(
-                              width: 50,
-                              height: 70,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.black.withOpacity(0.1),
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(
-                                    color: Colors.white.withOpacity(0.2),
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(14.0),
-                                  child: SvgPicture.asset(
-                                    movie.isFav
-                                        ? AppIconAssets.heartsIcon
-                                        : AppIconAssets.heartsIconOutline,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+                          child: FavContainer(movie: movie),
                         ),
                         Positioned(
                           bottom: 150,
                           left: 20,
                           right: 20,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(60),
-                                  color: Colors.amber,
-                                ),
-                              ),
-                              const SizedBox(width: 16),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(
-                                      movie.title,
-                                      style: Theme.of(
-                                        context,
-                                      ).textTheme.headlineLarge,
-                                    ),
-                                    Text(
-                                      movie.plot,
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .labelMedium
-                                          ?.copyWith(
-                                            color: Theme.of(context)
-                                                .textTheme
-                                                .labelMedium
-                                                ?.color
-                                                ?.withOpacity(0.5),
-                                          ),
-                                    ),
-                                    Text(
-                                      AppLocalizations.of(context)!.more,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .labelMedium
-                                          ?.copyWith(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                          child: MovieTextDetail(movie: movie),
                         ),
                       ],
                     );

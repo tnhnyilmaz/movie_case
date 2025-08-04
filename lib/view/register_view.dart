@@ -6,6 +6,7 @@ import 'package:movie_case/components/TextFieldComp/custom_textfield.dart';
 import 'package:movie_case/components/button/custom_elevated_button.dart';
 import 'package:movie_case/components/container/login_register_bottom_text.dart';
 import 'package:movie_case/components/container/login_register_text.dart';
+import 'package:movie_case/components/register/kullanici_okudum.dart';
 import 'package:movie_case/const/theme/app_assets.dart';
 import 'package:movie_case/l10n/app_localizations.dart';
 import 'package:movie_case/view/login_view.dart';
@@ -99,28 +100,7 @@ class _RegisterViewState extends State<RegisterView> {
                     textEditingController: _repeatPasswordController,
                   ),
                   SizedBox(height: 12),
-                  Text.rich(
-                    TextSpan(
-                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                        color: Colors.white.withOpacity(0.5),
-                      ),
-                      children: [
-                        TextSpan(
-                          text: AppLocalizations.of(context)!.kullnici_soz,
-                        ),
-                        TextSpan(
-                          text: AppLocalizations.of(context)!.read_ok,
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            decorationColor: Colors.white,
-                          ),
-                        ),
-                        TextSpan(
-                          text: AppLocalizations.of(context)!.read_continues,
-                        ),
-                      ],
-                    ),
-                  ),
+                  KullaniciOkudum(),
                   SizedBox(height: 36),
 
                   CustomElevatedButton(

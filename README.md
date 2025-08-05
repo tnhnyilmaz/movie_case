@@ -13,8 +13,8 @@ Movie Case, Flutter ile geliştirilmiş modern bir film keşif uygulamasıdır. 
 - 🎨 Özelleştirilmiş tema desteği
 ## 🖼️ Ekran Görüntüleri
 
-| Giriş Ekranı | Keşfet | Film Detayı | Profil |
-|-------------|--------|-------------|--------|
+| Giriş Ekranı |Kayıt Ekranı | Film Detayı |
+|-----------------------------------------|
 |<img width="3246" height="2340" alt="ekran" src="https://github.com/user-attachments/assets/b759c542-ab97-42ea-9fdd-aa4c30f6efc8" />
  |
 

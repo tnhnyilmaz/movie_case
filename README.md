@@ -1,16 +1,50 @@
-# movie_case
+# 🎬 Movie Case
 
-A new Flutter project.
+Movie Case, Flutter ile geliştirilmiş modern bir film keşif uygulamasıdır. Kullanıcılar popüler filmleri keşfedebilir, favorilerine ekleyebilir ve detaylı film bilgilerine ulaşabilir.
 
-## Getting Started
+## 🚀 Özellikler
 
-This project is a starting point for a Flutter application.
+- 🔍 Filmleri keşfet
+- ⭐ Favori filmlerini listele
+- 📄 Detaylı film sayfası
+- 🌐 Çoklu dil desteği (TR/EN)
+- 🔐 Giriş / Kayıt ol sistemi
+- 🧠 Bloc mimarisi kullanımı
+- 🎨 Özelleştirilmiş tema desteği
+## 🖼️ Ekran Görüntüleri
 
-A few resources to get you started if this is your first Flutter project:
+| Giriş Ekranı | Keşfet | Film Detayı | Profil |
+|-------------|--------|-------------|--------|
+|<img width="3246" height="2340" alt="ekran" src="https://github.com/user-attachments/assets/b759c542-ab97-42ea-9fdd-aa4c30f6efc8" />
+ |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🛠️ Kullanılan Teknolojiler
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter 3.x & Dart**
+- **BLoC Pattern** – `flutter_bloc`, `equatable`
+- **Localization** – `flutter_localizations`, `intl`
+- **UI Kitleri**
+  - `lottie`
+  - `flutter_svg`
+  - `google_fonts`
+- **Splash ve İkon**
+  - `flutter_native_splash`
+  - `flutter_launcher_icons`
+## 📦 Kurulum
+
+1. Bu repoyu klonla:
+   ```bash
+   git clone https://github.com/tnhnyilmaz/movie_case.git
+   cd movie_case
+   flutter pub get
+    flutter run
+🌍 Dil Desteği
+
+      Türkçe 🇹🇷
+      İngilizce 🇺🇸
+      
+  Proje Yapısı
+  <img width="709" height="315" alt="image" src="https://github.com/user-attachments/assets/db6580b0-8847-4da9-b63a-f45bce82ade4" />
+
+  Ekran Gö
+

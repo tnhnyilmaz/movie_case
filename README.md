@@ -1,4 +1,4 @@
-# 🎬 Movie Case
+![ekran2](https://github.com/user-attachments/assets/610caf57-a61e-4c2d-90c7-12557a28a477)# 🎬 Movie Case
 
 Movie Case, Flutter ile geliştirilmiş modern bir film keşif uygulamasıdır. Kullanıcılar popüler filmleri keşfedebilir, favorilerine ekleyebilir ve detaylı film bilgilerine ulaşabilir.
 
@@ -17,6 +17,7 @@ Movie Case, Flutter ile geliştirilmiş modern bir film keşif uygulamasıdır. 
 |-----------------------------------------|
 |<img width="3246" height="2340" alt="ekran" src="https://github.com/user-attachments/assets/b759c542-ab97-42ea-9fdd-aa4c30f6efc8" />
  |
+![ekran2](https://github.com/user-attachments/assets/b79fa2a1-ee28-48b7-9a78-c4e99d3831b7)
 
 ## 🛠️ Kullanılan Teknolojiler
 
@@ -46,5 +47,5 @@ Movie Case, Flutter ile geliştirilmiş modern bir film keşif uygulamasıdır. 
   Proje Yapısı
   <img width="709" height="315" alt="image" src="https://github.com/user-attachments/assets/db6580b0-8847-4da9-b63a-f45bce82ade4" />
 
-  Ekran Gö
+
 

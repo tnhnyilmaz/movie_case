@@ -14,7 +14,7 @@ class RootPage extends StatelessWidget {
         if (state is AuthAuthenticated) {
           return  ExplorerView();
         }
-        return const LoginView(); // Artık güvenle kullanabilirsin
+        return const LoginView(); 
       },
     );
   }

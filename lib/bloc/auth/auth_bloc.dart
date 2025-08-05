@@ -11,18 +11,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   AuthBloc({required this.authRepository}) : super(AuthInitial()) {
     on<LoginRequested>((event, emit) async {
-      // Önce yükleniyor durumunu yayınla
       emit(AuthLoading());
       try {
-        // Repository üzerinden giriş yapmayı dene
         final userData = await authRepository.login(
           event.email,
           event.password,
         );
-        // Başarılı olursa, kullanıcı bilgileriyle birlikte AuthAuthenticated durumunu yayınla
         emit(AuthAuthenticated(userData: userData));
       } catch (e) {
-        // Hata olursa, hata mesajıyla birlikte AuthFailure durumunu yayınla
         emit(AuthFailure(error: e.toString()));
       }
     });

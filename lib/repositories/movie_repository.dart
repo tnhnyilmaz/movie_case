@@ -3,12 +3,11 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:movie_case/bloc/toke_storage.dart';
 import 'package:movie_case/models/movie_model.dart';
-import 'package:movie_case/models/movie_response.dart'; // MovieResponse modelini import ettiğinizi varsayalım
+import 'package:movie_case/models/movie_response.dart';
 
 class MovieRepository {
   final String _baseUrl = "https://caseapi.servicelabs.tech/movie/list";
 
-  // Metodun dönüş tipini MovieResponse olarak değiştiriyoruz
   Future<MovieResponse> fetchMovies(int page) async {
     final token = await TokenStorage.getToken();
     if (token == null) {
@@ -29,12 +28,10 @@ class MovieRepository {
     if (response.statusCode == 200) {
       try {
         final jsonBody = jsonDecode(response.body);
-        // API yanıtını doğrudan MovieResponse modeline dönüştürüyoruz
         return MovieResponse.fromJson(jsonBody);
       } on FormatException catch (e) {
         throw Exception("API yanıtı hatalı formatta: $e");
       } catch (e) {
-        // Genel hata yakalama
         throw Exception("API yanıtı işlenirken bir sorun oluştu: $e");
       }
     } else if (response.statusCode == 401) {
@@ -86,12 +83,10 @@ class MovieRepository {
     if (response.statusCode == 200) {
       final jsonData = jsonDecode(response.body);
 
-      // Eğer liste doğrudan dönüyorsa:
       if (jsonData is List) {
         return jsonData.map((e) => Movie.fromJson(e)).toList();
       }
 
-      // Eğer `data` veya `movies` gibi bir alan içindeyse:
       final List<dynamic> moviesJson = jsonData["movies"] ?? jsonData["data"];
       return moviesJson.map((e) => Movie.fromJson(e)).toList();
     } else {

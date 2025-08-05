@@ -31,6 +31,16 @@
   "sign_up_now" : "Sign Up Now",
   "exiting_account" : "Do you already have an account?",
   "ok_photo" : "Photo uploaded successfully!",
-  "select_photo" : "Please select a photo first."
+  "select_photo" : "Please select a photo first.",
+  "less" : "Less",
+  "premium_account" : "Premium\nAccount",
+  "highlight" : "Highlight",
+  "more_likes" : "More\nLikes",
+  "more_matches" : "More\nMatches",
+  "recieve_bonus" : "Bonuses You Will Receive",
+  "all_jeton" : "See All Token",
+  "limited_offer" : "Limited Offer",
+  "open_pack" : "Earn bonuses and unlock new levels by choosing the coin pack!",
+  "unlock_token" : "Select a coin to unlock"
   
 }

@@ -14,7 +14,7 @@ class LocaleBloc extends Bloc<LocaleEvent, LocaleState> {
       emit(LocaleState(event.locale));
     });
 
-    _loadSavedLocale(); // dil daha önce seçilmiş mi diye kontrol et
+    _loadSavedLocale(); 
   }
 
   void _loadSavedLocale() async {

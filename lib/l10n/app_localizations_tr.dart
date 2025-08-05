@@ -103,4 +103,34 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get select_photo => 'Lütfen önce bir fotoğraf seçin.';
+
+  @override
+  String get less => 'Daha Az';
+
+  @override
+  String get premium_account => 'Premium\nHesap';
+
+  @override
+  String get highlight => 'Öne\nÇıkarma';
+
+  @override
+  String get more_likes => 'Daha\nFazla Beğeni';
+
+  @override
+  String get more_matches => 'Daha\nFazla Eşleşme';
+
+  @override
+  String get recieve_bonus => 'Alacağınız Bonuslar';
+
+  @override
+  String get all_jeton => 'Tüm Jetonları Gör';
+
+  @override
+  String get limited_offer => 'Sınırlı Teklif';
+
+  @override
+  String get open_pack => 'Jeton paketini seçerek bonus kazanın ve yeni bölümlerin kilidini açın!';
+
+  @override
+  String get unlock_token => 'Kilidi açmak için bir jeton seçin';
 }

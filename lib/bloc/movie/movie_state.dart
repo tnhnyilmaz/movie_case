@@ -15,7 +15,7 @@ class MovieLoading extends MovieState {}
 class MovieLoaded extends MovieState {
   final List<Movie> movies;
   final int totalPages;
-  final int currentPage; // int yapıldı
+  final int currentPage; 
 
   const MovieLoaded({
     required this.movies,
@@ -36,7 +36,7 @@ class MovieAddedToFavorites extends MovieState {
 class MovieError extends MovieState {
   final String message;
 
-  const MovieError({required this.message}); // parametre düzenlendi
+  const MovieError({required this.message});
 
   @override
   List<Object?> get props => [message];

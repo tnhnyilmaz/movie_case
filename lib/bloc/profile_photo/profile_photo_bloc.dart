@@ -29,17 +29,15 @@ class ProfilePhotoBloc extends Bloc<ProfilePhotoEvent, ProfilePhotoState> {
       }
     });
 
-    // Bloc içindeki yükleme kısmı
     on<UploadPhotoRequested>((event, emit) async {
       emit(ProfilePhotoLoading());
       try {
-        // Repository artık fotoğrafın URL'sini döndürüyor
         final uploadedPhotoUrl = await profileRepository.uploadProfilePhoto(
           event.imagePath,
         );
         emit(
           ProfilePhotoUploaded(photoUrl: uploadedPhotoUrl),
-        ); // URL'yi state'e gönderiyoruz
+        ); 
       } catch (e) {
         emit(ProfilePhotoFailure(e.toString()));
       }

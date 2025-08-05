@@ -38,7 +38,6 @@ class _ProfileDetailViewState extends State<ProfileDetailView> {
           if (index == 0) {
             Navigator.pushReplacementNamed(context, '/explorer');
           } else if (index == 1) {
-            // Şu anki sayfa: ProfileDetailView, bir şey yapmaya gerek yok
           }
         },
       ),
@@ -118,13 +117,12 @@ class _ProfileDetailViewState extends State<ProfileDetailView> {
                                     'http://',
                                     'https://',
                                   )
-                                : 'https://i.hizliresim.com/kesqtmz.png'; // varsayılan bir görsel
+                                : 'https://i.hizliresim.com/kesqtmz.png';
 
                             return MovieCard(
                               title: movie.title,
                               descr: "dsad",
                               poster: securePosterUrl,
-                              // varsa göster
                             );
                           },
                         ),

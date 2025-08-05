@@ -286,6 +286,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please select a photo first.'**
   String get select_photo;
+
+  /// No description provided for @less.
+  ///
+  /// In en, this message translates to:
+  /// **'Less'**
+  String get less;
+
+  /// No description provided for @premium_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium\nAccount'**
+  String get premium_account;
+
+  /// No description provided for @highlight.
+  ///
+  /// In en, this message translates to:
+  /// **'Highlight'**
+  String get highlight;
+
+  /// No description provided for @more_likes.
+  ///
+  /// In en, this message translates to:
+  /// **'More\nLikes'**
+  String get more_likes;
+
+  /// No description provided for @more_matches.
+  ///
+  /// In en, this message translates to:
+  /// **'More\nMatches'**
+  String get more_matches;
+
+  /// No description provided for @recieve_bonus.
+  ///
+  /// In en, this message translates to:
+  /// **'Bonuses You Will Receive'**
+  String get recieve_bonus;
+
+  /// No description provided for @all_jeton.
+  ///
+  /// In en, this message translates to:
+  /// **'See All Token'**
+  String get all_jeton;
+
+  /// No description provided for @limited_offer.
+  ///
+  /// In en, this message translates to:
+  /// **'Limited Offer'**
+  String get limited_offer;
+
+  /// No description provided for @open_pack.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn bonuses and unlock new levels by choosing the coin pack!'**
+  String get open_pack;
+
+  /// No description provided for @unlock_token.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a coin to unlock'**
+  String get unlock_token;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

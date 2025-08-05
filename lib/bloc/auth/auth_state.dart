@@ -7,13 +7,10 @@ abstract class AuthState extends Equatable {
   List<Object?> get props => [];
 }
 
-// Başlangıç durumu (henüz hiçbir işlem yapılmadı)
 class AuthInitial extends AuthState {}
 
-// Giriş işlemi başladığında (UI'da loading indicator göstermek için)
 class AuthLoading extends AuthState {}
 
-// Giriş başarılı olduğunda (Kullanıcı verisini UI'a taşır)
 class AuthAuthenticated extends AuthState {
   final UserData userData;
 
@@ -25,7 +22,6 @@ class AuthAuthenticated extends AuthState {
 
 class AuthUnauthenticated extends AuthState {}
 
-// Giriş başarısız olduğunda (Hata mesajını UI'a taşır)
 class AuthFailure extends AuthState {
   final String error;
 

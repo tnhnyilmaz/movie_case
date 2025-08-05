@@ -61,7 +61,7 @@ class CustomBottomNavigation extends StatelessWidget {
   }) {
     return GestureDetector(
       onTap: () {
-        onTabSelected(index); // callback ile yukarıya bildiriyoruz
+        onTabSelected(index);
         if (index == 1) {
           Navigator.push(
             context,

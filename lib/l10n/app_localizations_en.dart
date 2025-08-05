@@ -103,4 +103,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get select_photo => 'Please select a photo first.';
+
+  @override
+  String get less => 'Less';
+
+  @override
+  String get premium_account => 'Premium\nAccount';
+
+  @override
+  String get highlight => 'Highlight';
+
+  @override
+  String get more_likes => 'More\nLikes';
+
+  @override
+  String get more_matches => 'More\nMatches';
+
+  @override
+  String get recieve_bonus => 'Bonuses You Will Receive';
+
+  @override
+  String get all_jeton => 'See All Token';
+
+  @override
+  String get limited_offer => 'Limited Offer';
+
+  @override
+  String get open_pack => 'Earn bonuses and unlock new levels by choosing the coin pack!';
+
+  @override
+  String get unlock_token => 'Select a coin to unlock';
 }

@@ -50,10 +50,8 @@ class _ExplorerViewState extends State<ExplorerView> {
               );
             }
 
-            // PageView ve NumberPagination'ı bir Stack içinde birleştir
             return Stack(
               children: [
-                // 1. Film Listesini Gösteren PageView
                 PageView.builder(
                   scrollDirection: Axis.vertical,
                   itemCount: state.movies.length,
@@ -95,7 +93,6 @@ class _ExplorerViewState extends State<ExplorerView> {
                   },
                 ),
 
-                // 2. Sayfalama Kontrolü
                 Padding(
                   padding: const EdgeInsets.only(bottom: 95.0),
                   child: Align(
@@ -135,7 +132,6 @@ class _ExplorerViewState extends State<ExplorerView> {
               ],
             );
           }
-          // Diğer durumlar için boş bir widget döndür
           return const SizedBox.shrink();
         },
       ),

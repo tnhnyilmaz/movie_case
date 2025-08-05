@@ -19,28 +19,20 @@ class AddProfilePhoto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // BlocProvider ile ProfilePhotoBloc'u bu widget ağacına sağlıyoruz.
     return BlocProvider(
-      create: (context) => ProfilePhotoBloc(
-        // Repository'i BLoC'a enjekte ediyoruz.
-        // Eğer Repository'niz zaten üst bir widget'tan sağlanıyorsa
-        // context.read<ProfileRepository>() kullanabilirsiniz.
-        ProfileRepository(),
-      ),
+      create: (context) => ProfilePhotoBloc(ProfileRepository()),
       child: Scaffold(
         backgroundColor: const Color(0xFF090909),
         appBar: CustomAppbar(
           onPres: () {
-            // Geri dönüldüğünde profil sayfasına git
             Navigator.pushReplacementNamed(context, '/profile');
           },
           isOffer: false,
         ),
         body: Padding(
           padding: const EdgeInsets.all(24.0),
-          // BlocConsumer hem arayüzü günceller hem de state geçişlerini dinler.
+
           child: BlocConsumer<ProfilePhotoBloc, ProfilePhotoState>(
-            // LISTENER: Tek seferlik eylemler için kullanılır (Snackbar, Navigation vb.)
             listener: (context, state) {
               if (state is ProfilePhotoUploaded) {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -49,7 +41,6 @@ class AddProfilePhoto extends StatelessWidget {
                     backgroundColor: Colors.green,
                   ),
                 );
-                // Yükleme başarılı olunca profil detay sayfasına yönlendir.
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (_) => const ProfileDetailView()),
@@ -63,7 +54,6 @@ class AddProfilePhoto extends StatelessWidget {
                 );
               }
             },
-            // BUILDER: State'e göre arayüzü yeniden çizmek için kullanılır.
             builder: (context, state) {
               return Column(
                 children: [
@@ -74,10 +64,8 @@ class AddProfilePhoto extends StatelessWidget {
                   ),
                   const SizedBox(height: 48),
 
-                  // Fotoğraf seçme alanı
                   GestureDetector(
                     onTap: () {
-                      // Eğer yükleme işlemi devam etmiyorsa fotoğraf seçme event'ini tetikle.
                       if (state is! ProfilePhotoLoading) {
                         context.read<ProfilePhotoBloc>().add(
                           PickPhotoRequested(),
@@ -89,9 +77,7 @@ class AddProfilePhoto extends StatelessWidget {
                       height: 160,
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(
-                          24,
-                        ), // Tam daire için
+                        borderRadius: BorderRadius.circular(24),
                         border: Border.all(
                           color: Colors.white.withOpacity(0.2),
                           width: 2,
@@ -99,26 +85,22 @@ class AddProfilePhoto extends StatelessWidget {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(80),
-                        // State'e göre container'ın içini dolduruyoruz
                         child: _buildPhotoHolder(context, state),
                       ),
                     ),
                   ),
-                  const Spacer(), // Butonu en alta itmek için
-                  // Yükleme Butonu
+                  const Spacer(),
                   SizedBox(
                     width: double.infinity,
                     child: CustomElevatedButton(
                       text: AppLocalizations.of(context)!.continous,
                       onPressed: () {
-                        // Sadece fotoğraf seçilmişse yükleme işlemini başlat.
                         if (state is ProfilePhotoSelected) {
                           context.read<ProfilePhotoBloc>().add(
                             UploadPhotoRequested(imagePath: state.imagePath),
                           );
                           context.read<AuthBloc>().add(GetProfileRequested());
                         } else {
-                          // Kullanıcı fotoğraf seçmeden butona basarsa uyar.
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(
@@ -140,15 +122,12 @@ class AddProfilePhoto extends StatelessWidget {
     );
   }
 
-  // State'e göre gösterilecek widget'ı belirleyen yardımcı fonksiyon
   Widget _buildPhotoHolder(BuildContext context, ProfilePhotoState state) {
     if (state is ProfilePhotoLoading) {
-      // Yükleniyor durumu: Ortada bir progress indicator göster.
       return const Center(
         child: CircularProgressIndicator(color: Colors.white),
       );
     } else if (state is ProfilePhotoSelected) {
-      // Fotoğraf seçildi durumu: Seçilen fotoğrafı göster.
       return Image.file(
         File(state.imagePath),
         fit: BoxFit.cover,
@@ -156,10 +135,9 @@ class AddProfilePhoto extends StatelessWidget {
         height: double.infinity,
       );
     } else {
-      // Başlangıç veya hata durumu: Artı ikonu göster.
       return Center(
         child: SvgPicture.asset(
-          AppIconAssets.plusIcon, // SVG dosyanızın yolu
+          AppIconAssets.plusIcon,
           width: 40,
           height: 40,
           colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),

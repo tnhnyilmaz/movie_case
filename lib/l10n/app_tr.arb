@@ -31,7 +31,17 @@
   "sign_up_now" : "Şimdi Kaydol",
   "exiting_account" : "Zaten bir hesabın var mı?",
   "ok_photo" : "Fotoğraf başarıyla yüklendi!",
-  "select_photo" : "Lütfen önce bir fotoğraf seçin."
+  "select_photo" : "Lütfen önce bir fotoğraf seçin.",
+  "less" : "Daha Az",
+  "premium_account" : "Premium\nHesap",
+  "highlight" : "Öne\nÇıkarma",
+  "more_likes" : "Daha\nFazla Beğeni",
+  "more_matches" : "Daha\nFazla Eşleşme",
+  "recieve_bonus" : "Alacağınız Bonuslar",
+  "all_jeton" : "Tüm Jetonları Gör",
+  "limited_offer" : "Sınırlı Teklif",
+  "open_pack" : "Jeton paketini seçerek bonus kazanın ve yeni bölümlerin kilidini açın!",
+  "unlock_token" : "Kilidi açmak için bir jeton seçin"
 
 
 }

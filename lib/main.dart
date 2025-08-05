@@ -15,7 +15,7 @@ import 'package:movie_case/view/profile_detail_view.dart';
 import 'package:movie_case/view/root_page.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // SharedPreferences için gerekli
+  WidgetsFlutterBinding.ensureInitialized(); 
   final movieRepository = MovieRepository();
   final authRepository = AuthRepository();
 
@@ -28,7 +28,7 @@ void main() async {
       child: MultiBlocProvider(
         providers: [
           BlocProvider<LocaleBloc>(
-            create: (_) => LocaleBloc(), // SharedPreferences içinde çalışıyor
+            create: (_) => LocaleBloc(), 
           ),
           BlocProvider<MovieBloc>(
             create: (context) =>

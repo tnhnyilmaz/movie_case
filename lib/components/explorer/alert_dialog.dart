@@ -37,14 +37,13 @@ class CustomAlertDialog extends StatelessWidget {
             final bloc = context.read<MovieBloc>();
             bloc.add(AddToFavEvent(movieId: movieId));
 
-            // Kısa bir gecikme verip ardından FetchMovies ile yenileme
             Future.delayed(const Duration(milliseconds: 100), () {
               final currentState = bloc.state;
               if (currentState is MovieLoaded) {
                 bloc.add(FetchMovies(page: currentState.currentPage));
-              } 
+              }
 
-              Navigator.of(context).pop(); // Dialog'u kapat
+              Navigator.of(context).pop();
             });
           },
           child: Text(

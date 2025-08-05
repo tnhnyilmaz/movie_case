@@ -11,20 +11,16 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
     on<FetchMovies>((event, emit) async {
       emit(MovieLoading());
       try {
-        // movieRepository.fetchMovies artık doğrudan MovieResponse nesnesi döndürüyor.
         final response = await movieRepository.fetchMovies(event.page);
 
         emit(
           MovieLoaded(
-            // Verilere MovieResponse nesnesi üzerinden erişiyoruz
             movies: response.movies,
             totalPages: response.pagination.maxPage,
             currentPage: response.pagination.currentPage,
           ),
         );
       } catch (e) {
-        // Hata durumunda, hatanın türüne göre özel mesajlar gösterebilirsiniz.
-        // Örneğin: `if (e is SomeSpecificException)` gibi.
         emit(MovieError(message: e.toString()));
       }
     });

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:movie_case/components/appbar/teklif_button.dart';
+import 'package:movie_case/components/unlimited_offers/teklif_button.dart';
 import 'package:movie_case/const/theme/app_assets.dart';
 import 'package:movie_case/l10n/app_localizations.dart';
 

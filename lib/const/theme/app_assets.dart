@@ -16,10 +16,15 @@ class AppIconAssets {
   static const String passwordIcon = 'assets/icons/password_icon.svg';
   static const String personIcon = 'assets/icons/person_icon.svg';
   static const String plusIcon = 'assets/icons/plus_icon.svg';
-  static const String topGradientIcon = 'assets/icons/top_gradient_icon.svg';
+  static const String topGradientIcon = 'assets/icons/top_gradient.svg';
+  static const String nLogoIcon = 'assets/icons/n_logo_icon.svg';
 }
 
 class AppPhotoAssets {
   static const String sinflixLogo = 'assets/photos/SinFlixLogo.svg';
   static const String sinflixSplash = 'assets/photos/SinFlixSplash.svg';
+  static const String heartsOffersIcon = 'assets/photos/hearts.png';
+  static const String matchIcon = 'assets/photos/match.png';
+  static const String onCikmaIcon = 'assets/photos/one_cikma.png';
+  static const String premiumIcon = 'assets/photos/premium.png';
 }
